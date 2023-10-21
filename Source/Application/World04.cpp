@@ -18,7 +18,7 @@ namespace nc
         auto material = GET_RESOURCE(Material, "Materials/grid.mtrl");
         m_model = std::make_shared<Model>();
         m_model->SetMaterial(material);
-        m_model->Load("models/sphere.obj");
+        m_model->Load("models/cube.obj", glm::vec3{ 0 }, glm::vec3{-90, 0, 0});
 
         return true;
     }
@@ -40,9 +40,9 @@ namespace nc
         ImGui::End();
 
         ImGui::Begin("Light Controls");
-        ImGui::DragFloat3("Ambient Light", &ambientLight[0], 0.1f);
+        ImGui::ColorEdit3("Ambient Color", &ambientLight[0], 0.1f);
         ImGui::DragFloat3("Light Position", &lightPosition[0]);
-        ImGui::DragFloat3("Light Color", &lightColor[0], 0.1f);
+        ImGui::ColorEdit3("Light Color", &lightColor[0], 0.1f);
         ImGui::End();
 
         //m_transform.rotation.z += 180 * dt;
@@ -63,14 +63,14 @@ namespace nc
         material->GetProgram()->SetUniform("model", m_transform.GetMatrix());
         material->GetProgram()->SetUniform("light.position", lightPosition);
         material->GetProgram()->SetUniform("light.color", lightColor);
-        material->GetProgram()->SetUniform("light.ambientLight", ambientLight);
+        material->GetProgram()->SetUniform("ambientLight", ambientLight);
 
         // View matrix
         glm::mat4 view = glm::lookAt(glm::vec3{ 0, 0, 3 }, glm::vec3{ 0, 0, 0 }, glm::vec3{ 0, 1, 0 });
         material->GetProgram()->SetUniform("view", view);
 
         //Projection
-        glm::mat4 projection = glm::perspective(glm::radians(70.0f), 800.0f / 600.0f, .01f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(70.0f), ENGINE.GetSystem<Renderer>()->GetWidth() / float(ENGINE.GetSystem<Renderer>()->GetHeight()), .01f, 100.0f);
         material->GetProgram()->SetUniform("projection", projection);
         
 

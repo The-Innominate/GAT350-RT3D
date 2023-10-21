@@ -66,6 +66,8 @@ namespace nc
 		glCullFace(GL_BACK);
 		glFrontFace(GL_CCW);
 
+
+
 	}
 
 	void Renderer::BeginFrame()
