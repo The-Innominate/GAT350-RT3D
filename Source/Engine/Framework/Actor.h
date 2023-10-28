@@ -5,6 +5,7 @@
 #include "Components/Component.h"
 #include <memory>
 
+
 namespace nc
 {
 	// Actors are objects that hold components to define their behavior and have a transform.
@@ -35,6 +36,8 @@ namespace nc
 
 		virtual void OnCollisionEnter(Actor* other) {}
 		virtual void OnCollisionExit(Actor* other) {}
+
+		void ProcessGui() override;
 
 		class Scene* m_scene = nullptr;
 		friend class Scene;

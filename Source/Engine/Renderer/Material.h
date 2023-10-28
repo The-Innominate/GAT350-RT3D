@@ -25,7 +25,7 @@ namespace nc
 		glm::vec3 specular{ 1 };
 		glm::vec2 tiling{ 1, 1 };
 		glm::vec2 offset{ 0, 0 };
-		float shininess;
+		float shininess = 2.0f;
 
 	private:
 		res_t<Program> m_program;

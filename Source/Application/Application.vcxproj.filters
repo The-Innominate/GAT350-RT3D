@@ -8,6 +8,12 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{0714a8dd-95f6-4338-84be-e82c3728925e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Material">
+      <UniqueIdentifier>{000db614-45f9-4693-812e-468cffa11ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{1b19e87a-dcb2-478d-aef2-c471b2807037}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -25,6 +31,9 @@
     <ClCompile Include="World04.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World05.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -37,6 +46,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World04.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World05.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -73,6 +85,24 @@
     </None>
     <None Include="..\..\Build\Assets\Shaders\lit_texture.vert">
       <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\multi_lit_texture.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\multi_lit_texture.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\grid.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\multi.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\quad.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene.json">
+      <Filter>Scenes</Filter>
     </None>
   </ItemGroup>
 </Project>
