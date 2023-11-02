@@ -1,6 +1,7 @@
 #include "ModelComponent.h"
 #include "Framework/Actor.h"
 #include "Framework/Resource/ResourceManager.h"
+#include "Core/Core.h"
 
 namespace nc
 {
@@ -32,6 +33,10 @@ namespace nc
 		auto material = model->GetMaterial();
 		material->Bind();
 		material->GetProgram()->SetUniform("model", m_owner->transform.GetMatrix());
+
+		glDepthMask(enableDepth);
+		glCullFace(cullFace);
+
 		model->Draw();
 	}
 
@@ -39,5 +44,11 @@ namespace nc
 	{
 		READ_DATA(value, modelName);
 		READ_DATA(value, materialName);
+
+		READ_DATA(value, enableDepth);
+		std::string cullfaceName;
+		READ_NAME_DATA(value, "cullface", cullfaceName);
+		if (StringUtils::IsEqualIgnoreCase(cullfaceName, "front")) cullFace = GL_FRONT;
+		//if (StringUtils::IsEqualIgnoreCase(cullfaceName, "none")) cullFace = GL_NONE;
 	}
 }

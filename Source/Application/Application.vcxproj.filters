@@ -14,6 +14,9 @@
     <Filter Include="Scenes">
       <UniqueIdentifier>{1b19e87a-dcb2-478d-aef2-c471b2807037}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders\Cubemap">
+      <UniqueIdentifier>{58e404c7-0f6f-41b9-bcab-0f85cacc9f45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -53,9 +56,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Build\Assets\Shaders\unlit_color.frag">
-      <Filter>Shaders</Filter>
-    </None>
     <None Include="..\..\Build\Assets\Shaders\unlit_color.prog">
       <Filter>Shaders</Filter>
     </None>
@@ -103,6 +103,42 @@
     </None>
     <None Include="..\..\Build\Assets\Scenes\scene.json">
       <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\phong.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong_normal.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong_normal.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong_normal.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\shrek.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\skybox.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\cubemap.frag">
+      <Filter>Shaders\Cubemap</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\skybox.prog">
+      <Filter>Shaders\Cubemap</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\skybox.vert">
+      <Filter>Shaders\Cubemap</Filter>
     </None>
   </ItemGroup>
 </Project>
