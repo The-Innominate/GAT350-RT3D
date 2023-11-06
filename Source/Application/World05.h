@@ -19,7 +19,7 @@ namespace nc
 		float m_time;
 		float m_speed = 5;
 
-
+		float m_refraction{ 1 };
 		glm::vec3 ambientLight = { 0.1f, 0.1f, 0.1f };
 	};
 }

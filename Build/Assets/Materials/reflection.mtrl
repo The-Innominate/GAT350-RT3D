@@ -1,5 +1,5 @@
 {
-  "program": "shaders/skybox.prog",
+  "program": "shaders/reflection.prog",
   "cubemap": "storforsen_cubemap",
   "cubemaps": [
     "textures/storforsen_cubemap/posx.jpg",
