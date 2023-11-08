@@ -41,7 +41,7 @@ namespace nc
 	{
 		//<bind material>
 		//<draw the vertex buffer passing in the primitive>
-		m_material->Bind();
+		//m_material->Bind();
 		m_vertexBuffer->Draw(primitive);
 	}
 

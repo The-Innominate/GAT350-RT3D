@@ -37,6 +37,9 @@ namespace nc
 		void DrawPoint(int x, int y);
 		void DrawPoint(float x, float y);
 
+		void SetViewPort(int width, int height);
+		void ResetViewPort();
+
 		int GetWidth() const { return m_width; }
 		int GetHeight() const { return m_height; }
 
