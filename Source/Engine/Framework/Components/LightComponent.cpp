@@ -24,6 +24,10 @@ namespace nc
 		program->SetUniform(name + ".range", range);
 		program->SetUniform(name + ".innerAngle", glm::radians(innerAngle));
 		program->SetUniform(name + ".outerAngle", glm::radians(outerAngle));
+
+		if (castShadows) {
+			program->SetUniform("shadowVP", GetShadowMatrix());
+		}
 	}
 
 	void LightComponent::ProcessGui()
@@ -41,11 +45,36 @@ namespace nc
 		ImGui::DragFloat("Intensity", &intensity, 0.1f, 0, 10);
 		if (type != Directional) ImGui::DragFloat("Range", &range, 0.1f, 0.1f, 50);
 
+		ImGui::Checkbox("Cast Shadows", &castShadows);
+		if (castShadows)
+		{
+			ImGui::DragFloat("Shadow Size", &shadowSize, 0.1f, 5, 60);
+		}
+	}
 
+	glm::mat4 LightComponent::GetShadowMatrix()
+	{
+		glm::mat4 projection = glm::ortho(-shadowSize * 0.5f, shadowSize * 0.5f, -shadowSize * 0.5f, shadowSize * 0.5f, 0.1f, 50.0f);
+		glm::mat4 view = glm::lookAt(m_owner->transform.position, m_owner->transform.position + m_owner->transform.Forward(), glm::vec3(0, 1, 0));
+
+		return projection * view;
 	}
 
 	void LightComponent::Read(const nc::json_t& value)
 	{
 		// read json file
+		std::string lightTypeName;
+		READ_NAME_DATA(value, "lightType", lightTypeName);
+		if (StringUtils::IsEqualIgnoreCase(lightTypeName, "point")) type = eType::Point;
+		else if (StringUtils::IsEqualIgnoreCase(lightTypeName, "directional")) type = eType::Directional;
+		else if (StringUtils::IsEqualIgnoreCase(lightTypeName, "spot")) type = eType::Spot;
+
+		READ_DATA(value, color);
+		READ_DATA(value, intensity);
+		READ_DATA(value, range);
+		READ_DATA(value, innerAngle);
+		READ_DATA(value, outerAngle);
+		READ_DATA(value, castShadows);
+		READ_DATA(value, shadowSize);
 	}
 }

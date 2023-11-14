@@ -17,6 +17,12 @@
     <Filter Include="Shaders\Cubemap">
       <UniqueIdentifier>{58e404c7-0f6f-41b9-bcab-0f85cacc9f45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Source">
+      <UniqueIdentifier>{1d08e8b3-e7fb-463e-b237-7feb8f4a0ec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Source\Math">
+      <UniqueIdentifier>{5a868276-e475-42da-9f73-d5de2837dd50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -37,6 +43,36 @@
     <ClCompile Include="World05.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World06.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\FileIO.cpp">
+      <Filter>Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\Json.cpp">
+      <Filter>Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\Logger.cpp">
+      <Filter>Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\Math\MathUtils.cpp">
+      <Filter>Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\Memory.cpp">
+      <Filter>Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\StringUtils.cpp">
+      <Filter>Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\Time.cpp">
+      <Filter>Source\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Engine\Core\Math\Transform.cpp">
+      <Filter>Source\Source\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="World7.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -52,6 +88,60 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="World05.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World06.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Core.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\FileIO.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Json.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Logger.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Memory.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Random.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\StringUtils.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Time.h">
+      <Filter>Source\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\Color.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\MathUtils.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\Matrix22.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\Matrix33.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\Rect.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\Transform.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\Vector2.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Engine\Core\Math\Vector3.h">
+      <Filter>Source\Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="World7.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -178,6 +268,39 @@
     </None>
     <None Include="..\..\Build\Assets\Materials\tree.mtrl">
       <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_framingbuffer.json">
+      <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\framebuffer.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\postprocess.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\postprocess.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\postprocess.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\postprocess.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Fantasy\fantasy.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_shadow.json">
+      <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\shadow_depth.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\shadow_depth.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\shadow_depth.vert">
+      <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>

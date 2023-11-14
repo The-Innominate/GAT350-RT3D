@@ -81,6 +81,7 @@ namespace nc
 		m_program->SetUniform("material.tiling", tiling);
 		m_program->SetUniform("material.offset", offset);
 
+
 		if (albedoTexture)
 		{
 			params |= ALBEDO_TEXTURE_MASK;
@@ -113,6 +114,11 @@ namespace nc
 		{
 			cubemapTexture->SetActive(GL_TEXTURE4);
 			cubemapTexture->Bind();
+		}
+		if (depthTexture)
+		{
+			depthTexture->SetActive(GL_TEXTURE4);
+			depthTexture->Bind();
 		}
 	}
 	void Material::ProcessGui()

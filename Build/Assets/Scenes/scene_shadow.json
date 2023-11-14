@@ -1,0 +1,125 @@
+{
+	"actors": [
+		{
+			"type": "Actor",
+			"name": "Camera",
+			"persistent": true,
+			"active": true,
+			"prototype": false,
+			"transform": {
+				"position": [ 5, 3, 6 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 180, 0 ]
+			},
+			"components": [
+				{
+					"type": "CameraController",
+					"speed": [ 10 ],
+					"sensitivity": [ 0.1 ]
+				},
+				{
+					"type": "CameraComponent",
+					"fov": 70.0,
+					"aspect": 1.77,
+					"near": 0.1,
+					"far": 100
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "light",
+			"persistent": true,
+			"active": true,
+			"prototype": false,
+			"transform": {
+				"position": [ 5, 5, -5 ],
+				"rotation": [ 60, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "LightComponent",
+					"lightType": "directional",
+					"color": [ 1, 1, 1 ],
+					"intensity": [ 1 ],
+					"range":  20,
+					"innerAngle": 10,
+					"outerAngle": 30,
+					"castShadows": true,
+					"shadowSize":  20
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "tree1",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ 3, 0, -7 ],
+				"scale": [ 0.1, 0.1, 0.1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "fantasy/obj/SF_Bld_Elven_Lifetree_02.obj",
+					"materialName": "fantasy/Fantasy.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "tree2",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ 8, 0, -7 ],
+				"scale": [ 0.1, 0.1, 0.1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "fantasy/obj/SF_Bld_Elven_Lifetree_01.obj",
+					"materialName": "fantasy/Fantasy.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "ground_grass",
+			"persistent": true,
+			"active": true,
+			"transform": {
+				"position": [ 0, 0, 0 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "fantasy/obj/SF_Env_Tile_Grass_01.obj",
+					"materialName": "fantasy/Fantasy.mtrl"
+				}
+			]
+		},
+		{
+			"type": "Actor",
+			"name": "depth_debug",
+			"persistent": true,
+			"transform": {
+				"position": [ 5.5, 1, -6 ],
+				"scale": [ 1, 1, 1 ],
+				"rotation": [ 0, 0, 0 ]
+			},
+			"components": [
+				{
+					"type": "ModelComponent",
+					"modelName": "models/quad.obj",
+					"materialName": "materials/sprite.mtrl"
+				}
+			]
+		}
+	]
+}

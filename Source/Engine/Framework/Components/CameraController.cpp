@@ -7,6 +7,12 @@ namespace nc
 {
 	CLASS_DEFINITION(CameraController)
 
+	void CameraController::ProcessGui()
+	{
+		ImGui::DragFloat("Speed", &speed, 0.1f);
+		ImGui::DragFloat("Sensitivity", &sensitivity, 0.1f);
+	}
+
 	bool CameraController::Initialize()
 	{
 		glm::vec3 euler = QuaternionToEuler(m_owner->transform.rotation);
@@ -54,8 +60,13 @@ namespace nc
 
 	void CameraController::Read(const json_t& value)
 	{
+		std::string cameraControllerName;
+		READ_NAME_DATA(value, "cameraController", cameraControllerName);
+
 		READ_DATA(value, speed);
 		READ_DATA(value, sensitivity);
+		READ_DATA(value, yaw);
+		READ_DATA(value, pitch);
 	}
 
 }

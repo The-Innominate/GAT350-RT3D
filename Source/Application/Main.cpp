@@ -3,6 +3,8 @@
 #include "World03.h"
 #include "World04.h"
 #include "World05.h"
+#include "World06.h"
+#include "World7.h"
 #include "Core/Core.h"
 #include "Framework/Framework.h"
 #include "Renderer/Renderer.h"
@@ -11,17 +13,6 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	// Use this to test the StringUtils class
-	auto stringy = make_unique<nc::StringUtils>();
-	string str = "Hello World";
-	string str2 = "hello world";
-	cout << stringy->ToLower(str) << endl;
-	cout << stringy->ToUpper(str) << endl;
-	cout << stringy->IsEqualIgnoreCase(str, str2) << endl;
-	cout << stringy->CreateUnique(str) << endl;
-	cout << stringy->CreateUnique(str2) << endl;
-
-
 	INFO_LOG("Initialize Engine...")
 
 	//nc::MemoryTracker::Initialize();
@@ -30,7 +21,7 @@ int main(int argc, char* argv[])
 
 	ENGINE.Initialize();
 
-	auto world = make_unique<nc::World05>();
+	auto world = make_unique<nc::World07>();
 	world->Initialize();
 
 	// main loop
