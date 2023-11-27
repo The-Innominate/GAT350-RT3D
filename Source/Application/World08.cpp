@@ -1,4 +1,4 @@
-#include "World7.h"
+#include "World08.h"
 #include "Framework/Framework.h"
 #include "Input/InputSystem.h"
 #include <glm/glm/gtc/type_ptr.hpp>
@@ -8,11 +8,15 @@
 
 namespace nc
 {
-    bool World07::Initialize()
+    bool World08::Initialize()
     {
         m_scene = std::make_unique<Scene>();
-        m_scene->Load("Scenes/scene_shadow.json");
+        m_scene->Load("Scenes/scene_editor.json");
+        m_scene->Load("Scenes/scene_cel.json");
         m_scene->Initialize();
+
+        m_editor = std::make_unique<Editor>();
+
 
         auto texture = std::make_shared<Texture>();
         texture->CreateDepthTexture(1024, 1024);
@@ -36,22 +40,40 @@ namespace nc
     }
 
 
-    void World07::Shutdown()
+    void World08::Shutdown()
     {
     }
 
-    void World07::Update(float dt)
+    void World08::Update(float dt)
     {
+        m_time += dt;
         ENGINE.GetSystem<Gui>()->BeginFrame();
 
         m_scene->Update(dt);
+        m_editor->Update();
         m_scene->ProcessGui();
 
+        m_editor->ProcessGui(m_scene.get());
+
+        ImGui::Begin("Cel");
+        ImGui::SliderInt("Levels", &m_celLevels, 1, 8);
+        ImGui::SliderFloat("Specular Cutoff", &m_celSpecularCutoff, 0, 1);
+        ImGui::SliderFloat("Outline", &m_celOutline, 0, 1);
+        ImGui::End();
+
+        auto program = GET_RESOURCE(Program, "shaders/lit_phong_cel.prog");
+        if (program)
+        {
+			program->Use();
+			program->SetUniform("celLevels", m_celLevels);
+			program->SetUniform("celSpecularCutoff", m_celSpecularCutoff);
+			program->SetUniform("celOutline", m_celOutline);
+		}
 
         ENGINE.GetSystem<Gui>()->EndFrame();
     }
 
-    void World07::Draw(Renderer& renderer)
+    void World08::Draw(Renderer& renderer)
     {
         //// **** PASS 1 ****
         auto framebuffer = GET_RESOURCE(Framebuffer, "depth_buffer");

@@ -43,6 +43,26 @@ namespace nc
 		return (value < min) ? min : (value > max) ? max : value;
 	}
 
+	template<typename T>
+	constexpr T SetBits(T a, T b) {
+		return a | b;
+	}
+
+	template<typename T>
+	constexpr T ClearBits(T a, T b) {
+		return a & ~b;
+	}
+
+	template<typename T>
+	constexpr bool TestBits(T a, T b) {
+		return (a & b) == b;
+	}
+
+	template<typename T>
+	constexpr T ToggleBits(T a, T b) {
+		return a ^ b;
+	}
+
 	template<typename T> 
 	constexpr T Lerp(const T& a, const T& b, float t) // t = 0 <-> 1
 	{

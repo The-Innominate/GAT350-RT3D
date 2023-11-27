@@ -73,6 +73,9 @@
     <ClCompile Include="World7.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="World08.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World01.h">
@@ -142,6 +145,9 @@
       <Filter>Source\Source\Math</Filter>
     </ClInclude>
     <ClInclude Include="World7.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="World08.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -301,6 +307,27 @@
     </None>
     <None Include="..\..\Build\Assets\Shaders\shadow_depth.vert">
       <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\light.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong_cel.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong_cel.prog">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Materials\fantasy_cel.mtrl">
+      <Filter>Material</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_cel.json">
+      <Filter>Scenes</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Shaders\lit_phong_cel.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\..\Build\Assets\Scenes\scene_editor.json">
+      <Filter>Scenes</Filter>
     </None>
   </ItemGroup>
 </Project>

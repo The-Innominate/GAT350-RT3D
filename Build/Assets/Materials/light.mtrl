@@ -1,6 +1,6 @@
 {
   "program": "shaders/unlit_sprite.prog",
-  "albedoTexture": "textures/kirby.jpg",
+  "albedoTexture": "textures/light.png",
   "albedo": [
     1,
     1,

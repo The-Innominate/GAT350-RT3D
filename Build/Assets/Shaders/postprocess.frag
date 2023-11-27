@@ -32,15 +32,21 @@ vec4 colorTint(in vec4 color, in vec4 tint){
 }
 
 vec4 grain(in vec4 color){
-	return color;
+	// Adjust the 'intensity' to control the strength of the grain effect
+    float intensity = .5;
+    vec3 noisyColor = color.rgb + intensity * (2.0 * fract(sin(dot(gl_FragCoord.xyz, vec3(12.9898, 78.233, 45.5433))) * 43758.5453) - 1.0);
+    return vec4(noisyColor, color.a);
 }
 
 vec4 scanline(in vec4 color){
-	return color;
+	return (int(gl_FragCoord.y)  % 5 != 0) ? vec4( 0, 0, 0, color.a) : color;
 }
 
 vec4 custom(in vec4 color){
-	return color;
+	 // Adjust the 'intensity' to control the strength of the random effect
+    float intensity = 0.1;
+    vec3 randomColor = color.rgb + intensity * vec3(sin(gl_FragCoord.x), cos(gl_FragCoord.y), tan(gl_FragCoord.x + gl_FragCoord.y));
+    return vec4(randomColor, color.a);
 }
 
 void main()
@@ -52,6 +58,9 @@ void main()
 	if (bool(params & INVERT_MASK))  postprocess = invert(postprocess);
 	if (bool(params & GREYSCALE_MASK)) postprocess = greyScale(postprocess);
 	if (bool(params & COLORTINT_MASK)) postprocess = colorTint(postprocess, vec4(tint, 1));
+	if (bool(params & GRAIN_MASK)) postprocess = grain(postprocess);
+	if (bool(params & SCANLINE_MASK)) postprocess = scanline(postprocess);
+	if (bool(params & CUSTOM_MASK)) postprocess = custom(postprocess);
 
 
 	ocolor = mix(basecolor, postprocess, blend);
